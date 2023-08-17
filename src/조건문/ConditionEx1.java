@@ -19,7 +19,7 @@ public class ConditionEx1 {
         System.out.print("문자를 입력하세요 : ");
         Scanner sc = new Scanner(System.in);
         char ch = sc.next().charAt(0);
-        if (ch >= 'a' && ch <= 'z'); {
+        if (ch >= 'a' && ch <= 'z') {
             System.out.println(ch + "는 알파벳 소문자 입니다.");
         } else if (ch >= 'A' && ch <= 'Z') {
             System.out.println(ch + "는 알파벳 대문자 입니다.");
