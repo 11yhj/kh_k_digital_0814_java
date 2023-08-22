@@ -8,18 +8,24 @@ package 비트연산자;
 // 오른쪽 쉬프트 : >> 비트를 오른쪽으로 이동 시킴
 
 
+import java.util.Scanner;
+
 public class BitOperate {
     public static void main(String[] args) {
-        int num1 =10;
-        int num2 =12;
-        System.out.println(num1 & num2);
-        System.out.println(num1 | num2);
-        System.out.println(num1 ^ num2);
-        System.out.println(~num1);
-        System.out.println(num1 << 1);
+//        int num1 =10;
+//        int num2 =12;
+//        System.out.println(num1 & num2);
+//        System.out.println(num1 | num2);
+//        System.out.println(num1 ^ num2);
+//        System.out.println(~num1);
+//        System.out.println(num1 << 1);
+
+
+
 
 
 
 
     }
 }
+

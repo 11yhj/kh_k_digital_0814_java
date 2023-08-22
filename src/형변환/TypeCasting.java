@@ -14,5 +14,8 @@ public class TypeCasting {
         double avg = (double)total / 3;
 
         System.out.println(avg);
+
+
+
     }
 }
