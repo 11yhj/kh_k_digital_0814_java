@@ -14,11 +14,12 @@ public class AlphaChange {
         System.out.print("문자열 입력 : ");
         String alpha = sc.next();
         // 문자열 길이 만큼 순회 하면서 문제에 대한 ASCII값 확인 후 대문자, 소문자 인지 계산하고  감
-        for (int i = 0; i < alpha.length(); i++){
+        for (int i = 0; i < alpha.length(); i++) {
             char ch = alpha.charAt(i);
             if (ch < 'a') System.out.print((char) (ch + ('a' - 'A')));
-            else  System.out.print((char) (ch - ('a' - 'A')));
+            else System.out.print((char) (ch - ('a' - 'A')));
         }
-        
+
+
     }
 }
