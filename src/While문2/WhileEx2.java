@@ -14,7 +14,7 @@ public class WhileEx2 {
 //
 //        }
         do {
-            System.out.print("나이를 입력 하세요.");
+            System.out.print("나이를 입력 하세요. : ");
             Scanner sc = new Scanner(System.in);
             age = sc.nextInt();
         } while (age <= 0 || age >= 200);
