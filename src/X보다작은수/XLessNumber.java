@@ -20,3 +20,4 @@ public class XLessNumber {
         System.out.println();
     }
 }
+
