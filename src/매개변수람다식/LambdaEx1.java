@@ -25,3 +25,5 @@ public class LambdaEx1 {
 
     }
 }
+
+

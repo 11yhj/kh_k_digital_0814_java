@@ -1,5 +1,6 @@
 package 커피메뉴만들기;
 
+import java.io.*;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -8,7 +9,7 @@ import java.util.Scanner;
 public class CoffeeMenuList {
     // 문자열로 만들어진 키와 커피의 여러가지 정보가 포함된 객체를 값으로 사용
     static Map<String, MenuInfo> map = new HashMap<>();
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         makeMenu();
         selectMenu();
 
@@ -20,7 +21,7 @@ public class CoffeeMenuList {
 
 
     }
-    static void selectMenu(){
+    static void selectMenu() throws IOException {
         Scanner sc = new Scanner(System.in);
         String Key = "";  // 키를 받기 위한 문자열 변수
         while (true){
@@ -31,10 +32,10 @@ public class CoffeeMenuList {
                 case 1 :
                     System.out.println("=".repeat(10) + "메뉴보기" + "=".repeat(10));
                     for (String e : map.keySet()){
-                        System.out.println("메뉴 : " + map.get(e).name);
-                        System.out.println("가격 : " + map.get(e).price);
-                        System.out.println("분류 : " + map.get(e).category);
-                        System.out.println("설명 : " + map.get(e).description);
+                        System.out.println("메뉴 : " + map.get(e).getName());
+                        System.out.println("가격 : " + map.get(e).getPrice());
+                        System.out.println("분류 : " + map.get(e).getCategory());
+                        System.out.println("설명 : " + map.get(e).getDescription());
                         System.out.println("-".repeat(28));
                     }
                     break;
@@ -44,10 +45,10 @@ public class CoffeeMenuList {
                     Key = sc.next();
                     // 포함여주 확인하는 메소드 containsKey(Key) : map내에 해당 키가 있는지 확인하여 결과를 반환
                     if (map.containsKey(Key)) {
-                        System.out.println("메뉴 : " + map.get(Key).name);
-                        System.out.println("가격 : " + map.get(Key).price);
-                        System.out.println("분류 : " + map.get(Key).category);
-                        System.out.println("설명 : " + map.get(Key).description);
+                        System.out.println("메뉴 : " + map.get(Key).getName());
+                        System.out.println("가격 : " + map.get(Key).getPrice());
+                        System.out.println("분류 : " + map.get(Key).getCategory());
+                        System.out.println("설명 : " + map.get(Key).getDescription());
                     }else{System.out.println("해당 메뉴가 존재하지 않습니다.");
                     break;
 
@@ -98,7 +99,13 @@ public class CoffeeMenuList {
                     }
                 case 6 :
                     System.out.println("메뉴를 종료 합니다.");
-                    System.exit(0);  // 강제 종료 코드
+                    FileOutputStream fos = new FileOutputStream("src/커피메뉴만들기/coffee.bin");
+                    ObjectOutputStream oos = new ObjectOutputStream(fos);
+                    oos.writeObject(map);
+                    oos.flush();
+                    oos.close();
+                    fos.close();
+                    return;
                 default: System.out.println("선택하신 메뉴가 없습니다.");
 
             }
